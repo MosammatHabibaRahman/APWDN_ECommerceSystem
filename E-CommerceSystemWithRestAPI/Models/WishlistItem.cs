@@ -12,7 +12,8 @@ namespace E_CommerceSystemWithRestAPI.Models
         [Required]
         public int ProductId { get; set; }
         public Product Product { get; set; }
-        public int WishlistId { get; set; }
-        public Wishlist Wishlist { get; set; }
+        [Required]
+        public int CustomerId { get; set; }
+        public Customer Customer { get; set; }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using E_CommerceSystemWithRestAPI.Migrations;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -10,7 +11,7 @@ namespace E_CommerceSystemWithRestAPI.Models
     {
         public ECommerceDbContext():base("name=ECommerceDB")
         {
-            //Database.SetInitializer(new MigrateDatabaseToLatestVersion<CFBlogPostDbContext, Configuration>());
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<ECommerceDbContext, Configuration>());
         }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -22,7 +23,6 @@ namespace E_CommerceSystemWithRestAPI.Models
             modelBuilder.Entity<OrderedItem>().HasKey<int>(k => k.OrderedItemId);
             modelBuilder.Entity<Product>().HasKey<int>(k => k.ProductId);
             modelBuilder.Entity<Shipper>().HasKey<int>(k => k.ShipperId);
-            modelBuilder.Entity<Wishlist>().HasKey<int>(k => k.WishlistId);
             modelBuilder.Entity<WishlistItem>().HasKey<int>(k => k.WishlistItemId);
         }
         public DbSet<Admin> Admins { get; set; }
@@ -33,7 +33,6 @@ namespace E_CommerceSystemWithRestAPI.Models
         public DbSet<OrderedItem> OrderedItems { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Shipper> Shippers { get; set; }
-        public DbSet<Wishlist> Wishlists { get; set; }
         public DbSet<WishlistItem> WishlistItems { get; set; }
     }
 }
