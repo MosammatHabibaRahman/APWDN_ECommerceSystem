@@ -7,13 +7,13 @@ namespace E_CommerceSystemWithRestAPI.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class OrderedIdFKMadeOptionalInOrderedItemTableRe : IMigrationMetadata
+    public sealed partial class InitialCreate : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(OrderedIdFKMadeOptionalInOrderedItemTableRe));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreate));
         
         string IMigrationMetadata.Id
         {
-            get { return "202101011434108_OrderedIdFKMadeOptionalInOrderedItemTableRe"; }
+            get { return "202101011539070_InitialCreate"; }
         }
         
         string IMigrationMetadata.Source

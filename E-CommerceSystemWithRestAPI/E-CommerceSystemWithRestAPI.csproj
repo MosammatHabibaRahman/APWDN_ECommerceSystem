@@ -102,17 +102,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202012311217038_InitialCreate.cs" />
-    <Compile Include="Migrations\202012311217038_InitialCreate.designer.cs">
-      <DependentUpon>202012311217038_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202101011404529_OrderedIdFKMadeOptionalInOrderedItemTable.cs" />
-    <Compile Include="Migrations\202101011404529_OrderedIdFKMadeOptionalInOrderedItemTable.designer.cs">
-      <DependentUpon>202101011404529_OrderedIdFKMadeOptionalInOrderedItemTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202101011434108_OrderedIdFKMadeOptionalInOrderedItemTableRe.cs" />
-    <Compile Include="Migrations\202101011434108_OrderedIdFKMadeOptionalInOrderedItemTableRe.designer.cs">
-      <DependentUpon>202101011434108_OrderedIdFKMadeOptionalInOrderedItemTableRe.cs</DependentUpon>
+    <Compile Include="Migrations\202101011539070_InitialCreate.cs" />
+    <Compile Include="Migrations\202101011539070_InitialCreate.designer.cs">
+      <DependentUpon>202101011539070_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
@@ -151,14 +143,8 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202012311217038_InitialCreate.resx">
-      <DependentUpon>202012311217038_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202101011404529_OrderedIdFKMadeOptionalInOrderedItemTable.resx">
-      <DependentUpon>202101011404529_OrderedIdFKMadeOptionalInOrderedItemTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202101011434108_OrderedIdFKMadeOptionalInOrderedItemTableRe.resx">
-      <DependentUpon>202101011434108_OrderedIdFKMadeOptionalInOrderedItemTableRe.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202101011539070_InitialCreate.resx">
+      <DependentUpon>202101011539070_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

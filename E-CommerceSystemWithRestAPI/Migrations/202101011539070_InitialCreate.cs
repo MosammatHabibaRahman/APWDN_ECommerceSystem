@@ -71,10 +71,10 @@
                         OrderedItemId = c.Int(nullable: false, identity: true),
                         ProductId = c.Int(nullable: false),
                         Quantity = c.Int(nullable: false),
-                        OrderId = c.Int(nullable: false),
+                        OrderId = c.Int(),
                     })
                 .PrimaryKey(t => t.OrderedItemId)
-                .ForeignKey("dbo.Orders", t => t.OrderId, cascadeDelete: true)
+                .ForeignKey("dbo.Orders", t => t.OrderId)
                 .ForeignKey("dbo.Products", t => t.ProductId, cascadeDelete: true)
                 .Index(t => t.ProductId)
                 .Index(t => t.OrderId);
