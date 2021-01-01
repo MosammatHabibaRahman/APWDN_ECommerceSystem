@@ -20,7 +20,10 @@ namespace E_CommerceSystemWithRestAPI.Models
             modelBuilder.Entity<Customer>().HasKey<int>(k => k.CustomerId);
             modelBuilder.Entity<Offer>().HasKey<int>(k => k.OfferId);
             modelBuilder.Entity<Order>().HasKey<int>(k => k.OrderId);
+            
             modelBuilder.Entity<OrderedItem>().HasKey<int>(k => k.OrderedItemId);
+            modelBuilder.Entity<OrderedItem>().Property(o => o.OrderId).IsOptional();
+            
             modelBuilder.Entity<Product>().HasKey<int>(k => k.ProductId);
             modelBuilder.Entity<Shipper>().HasKey<int>(k => k.ShipperId);
             modelBuilder.Entity<WishlistItem>().HasKey<int>(k => k.WishlistItemId);
