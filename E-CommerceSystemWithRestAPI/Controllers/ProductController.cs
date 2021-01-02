@@ -9,15 +9,36 @@ using System.Web.Http;
 
 namespace E_CommerceSystemWithRestAPI.Controllers
 {
-    [RoutePrefix("api/products")]
+    [RoutePrefix("api/categories/{id}/products")]
     public class ProductController : ApiController
     {
-        ProductRepository postController = new ProductRepository();
+        ProductRepository productRepository = new ProductRepository();
 
-        [Route("")]
+        [Route("~/api/products")]
         public IHttpActionResult GetAll()
         {
-            return Ok(postController.GetAll());
+            return Ok(productRepository.GetAll());
+        }
+
+
+        [Route("")]
+        public IHttpActionResult GetAll(int id)
+        {
+            return Ok(productRepository.GetAll().Where(s=>s.CategoryId==id));
+        }
+
+        [Route("{pid}")]
+        public IHttpActionResult Get(int pid)
+        {
+            Product product = productRepository.Get(pid);
+            if (product == null)
+            {
+                return StatusCode(HttpStatusCode.NoContent);
+            }
+            else
+            {
+                return Ok(product);
+            }
         }
 
         [Route("")]
@@ -25,7 +46,7 @@ namespace E_CommerceSystemWithRestAPI.Controllers
         {
             if (ModelState.IsValid )
             {
-                postController.Insert(product);
+                productRepository.Insert(product);
                 return StatusCode(HttpStatusCode.Created);
             }
             else
@@ -33,7 +54,26 @@ namespace E_CommerceSystemWithRestAPI.Controllers
                 return StatusCode(HttpStatusCode.BadRequest);
             }
         }
+        [Route("{pid}")]
+        public IHttpActionResult Put([FromUri]int pid, [FromBody]Product prodcut)
+        {
+            prodcut.ProductId = pid;
+            if(ModelState.IsValid)
+            {
+                productRepository.Update(prodcut);
+                return Ok(prodcut);
+            }
+            else
+            {
+                return BadRequest(ModelState);
+            }
+        }
 
-       
+        [Route("{pid}")]
+        public IHttpActionResult Delete(int pid)
+        {
+            productRepository.Delete(pid);
+            return StatusCode(HttpStatusCode.NoContent);
+        }
     }
 }
