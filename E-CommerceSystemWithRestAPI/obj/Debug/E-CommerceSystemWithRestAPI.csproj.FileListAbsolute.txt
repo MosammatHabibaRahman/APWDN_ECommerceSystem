@@ -104,3 +104,4 @@ C:\Users\koush\OneDrive\Desktop\ATP2 Final Term Project Ecommerce\APWDN_ECommerc
 C:\Users\koush\OneDrive\Desktop\ATP2 Final Term Project Ecommerce\APWDN_ECommerceSystem\E-CommerceSystemWithRestAPI\obj\Debug\E-CommerceSystemWithRestAPI.dll
 C:\Users\koush\OneDrive\Desktop\ATP2 Final Term Project Ecommerce\APWDN_ECommerceSystem\E-CommerceSystemWithRestAPI\obj\Debug\E-CommerceSystemWithRestAPI.pdb
 C:\Users\koush\OneDrive\Desktop\ATP2 Final Term Project Ecommerce\APWDN_ECommerceSystem\E-CommerceSystemWithRestAPI\obj\Debug\E_CommerceSystemWithRestAPI.Migrations.ProductUpdate.resources
+C:\Users\koush\OneDrive\Desktop\ATP2 Final Term Project Ecommerce\APWDN_ECommerceSystem\E-CommerceSystemWithRestAPI\obj\Debug\E-CommerceSystemWithRestAPI.csprojAssemblyReference.cache

@@ -11,7 +11,7 @@ namespace E_CommerceSystemWithRestAPI.Models
     {
         public ECommerceDbContext():base("name=ECommerceDB")
         {
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<ECommerceDbContext, Configuration>());
+            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<ECommerceDbContext>());
         }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
