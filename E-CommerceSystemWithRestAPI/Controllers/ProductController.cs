@@ -1,4 +1,5 @@
-﻿using E_CommerceSystemWithRestAPI.Repositories;
+﻿using E_CommerceSystemWithRestAPI.Models;
+using E_CommerceSystemWithRestAPI.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,12 +12,28 @@ namespace E_CommerceSystemWithRestAPI.Controllers
     [RoutePrefix("api/products")]
     public class ProductController : ApiController
     {
-        ProductRepository pr = new ProductRepository();
+        ProductRepository postController = new ProductRepository();
 
         [Route("")]
         public IHttpActionResult GetAll()
         {
-            return Ok(pr.GetAll());
+            return Ok(postController.GetAll());
         }
+
+        [Route("")]
+        public IHttpActionResult Post(Product product)
+        {
+            if (ModelState.IsValid )
+            {
+                postController.Insert(product);
+                return StatusCode(HttpStatusCode.Created);
+            }
+            else
+            {
+                return StatusCode(HttpStatusCode.BadRequest);
+            }
+        }
+
+       
     }
 }

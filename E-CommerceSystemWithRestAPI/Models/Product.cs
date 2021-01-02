@@ -18,11 +18,11 @@ namespace E_CommerceSystemWithRestAPI.Models
         public string Description { get; set; }
         [Required]
         public DateTime CreatedAt { get; set; }
-        public DateTime DeletedAt { get; set; }
+        public DateTime? DeletedAt { get; set; }
         [Required]
         public int CategoryId { get; set; }
         public Category Category { get; set; }
-        public int OfferId { get; set; }
+        public int? OfferId { get; set; }
         public Offer Offer { get; set; }
         public ICollection<WishlistItem> WishlistItems { get; set; }
         public ICollection<OrderedItem> OrderedItems { get; set; }

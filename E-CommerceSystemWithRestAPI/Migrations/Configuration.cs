@@ -18,6 +18,22 @@
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method
             //  to avoid creating duplicate seed data.
+           // Category seed
+            //Models.Category Electronics  =  new Models.Category { CategoryName = "Electronics", CreatedAt = DateTime.Now };
+           // Models.Category Beauty = new Models.Category { CategoryName = "Beauty", CreatedAt = DateTime.Now };
+            
+            context.Categories.AddOrUpdate(p => p.CategoryId, 
+                                    new Models.Category {CategoryId=1 ,CategoryName = "Electronics", CreatedAt = DateTime.Now },
+                                    new Models.Category { CategoryId =2, CategoryName = "Beauty", CreatedAt = DateTime.Now }
+                                    );
+           
+
+
+            // product seed
+            Models.Product KLipStick = new Models.Product { ProductName = "KLipStick", Quantity = 10, Price = 100, Description = "lorem lorem lorem", CreatedAt = DateTime.Now, CategoryId = 2 };
+            Models.Product AsusHeadphone = new Models.Product { ProductName = "AsusHeadphone", Quantity = 5, Price = 400, Description = "lorem asdasdsa lorem", CreatedAt = DateTime.Now, CategoryId = 1 };
+            context.Products.AddOrUpdate(p => p.ProductId, AsusHeadphone, KLipStick);
+         
         }
     }
 }

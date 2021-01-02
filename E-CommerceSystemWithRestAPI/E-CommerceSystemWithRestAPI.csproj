@@ -106,6 +106,10 @@
     <Compile Include="Migrations\202012311217038_InitialCreate.designer.cs">
       <DependentUpon>202012311217038_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202101020714386_ProductUpdate.cs" />
+    <Compile Include="Migrations\202101020714386_ProductUpdate.designer.cs">
+      <DependentUpon>202101020714386_ProductUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Category.cs" />
@@ -146,6 +150,9 @@
     <EmbeddedResource Include="Migrations\202012311217038_InitialCreate.resx">
       <DependentUpon>202012311217038_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101020714386_ProductUpdate.resx">
+      <DependentUpon>202101020714386_ProductUpdate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -162,7 +169,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>50020</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:50020/</IISUrl>
+          <IISUrl>http://localhost:3001/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
