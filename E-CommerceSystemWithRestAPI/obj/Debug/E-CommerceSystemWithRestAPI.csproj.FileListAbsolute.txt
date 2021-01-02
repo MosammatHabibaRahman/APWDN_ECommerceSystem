@@ -51,3 +51,4 @@ C:\Users\Habiba\Desktop\APWDN\APWDN Final Project\E-CommerceSystemWithRestAPI\E-
 C:\Users\Habiba\Desktop\APWDN\APWDN Final Project\E-CommerceSystemWithRestAPI\E-CommerceSystemWithRestAPI\bin\System.Web.Http.Cors.xml
 C:\Users\Habiba\Desktop\APWDN\APWDN Final Project\E-CommerceSystemWithRestAPI\E-CommerceSystemWithRestAPI\obj\Debug\E_CommerceSystemWithRestAPI.Migrations.InitialCreate.resources
 C:\Users\Habiba\Desktop\APWDN\APWDN Final Project\E-CommerceSystemWithRestAPI\E-CommerceSystemWithRestAPI\obj\Debug\E-CommerceSystemWithRestAPI.csproj.GenerateResource.cache
+C:\Users\Habiba\Desktop\APWDN\APWDN Final Project\E-CommerceSystemWithRestAPI\E-CommerceSystemWithRestAPI\obj\Debug\E_CommerceSystemWithRestAPI.Migrations.xyz.resources
