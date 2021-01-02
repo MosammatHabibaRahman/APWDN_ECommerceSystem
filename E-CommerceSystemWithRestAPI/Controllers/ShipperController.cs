@@ -12,29 +12,29 @@ namespace E_CommerceSystemWithRestAPI.Controllers
     [RoutePrefix("api/shippers")]
     public class ShipperController : ApiController
     {
-        ShipperRepository sr = new ShipperRepository();
+        ShipperRepository shipperRepo = new ShipperRepository();
 
         [Route("")]
         public IHttpActionResult GetAll()
         {
-            return Ok(sr.GetAll());
+            return Ok(shipperRepo.GetAll());
         }
 
         [Route("{id}", Name = "GetShipperById")]
         public IHttpActionResult Get(int id)
         {
-            var post = sr.Get(id);
+            var post = shipperRepo.Get(id);
             if (post == null)
             {
                 return StatusCode(HttpStatusCode.NoContent);
             }
-            return Ok(sr.Get(id));
+            return Ok(shipperRepo.Get(id));
         }
 
         [Route("")]
         public IHttpActionResult Post(Shipper shipper)
         {
-            sr.Insert(shipper);
+            shipperRepo.Insert(shipper);
             string uri = Url.Link("GetShipperById", new { id = shipper.ShipperId });
             return Created(uri, shipper);
         }
@@ -43,14 +43,14 @@ namespace E_CommerceSystemWithRestAPI.Controllers
         public IHttpActionResult Put([FromUri] int id, [FromBody] Shipper shipper)
         {
             shipper.ShipperId = id;
-            sr.Update(shipper);
+            shipperRepo.Update(shipper);
             return Ok(shipper);
         }
 
         [Route("{id}")]
         public IHttpActionResult Delete(int id)
         {
-            sr.Delete(id);
+            shipperRepo.Delete(id);
             return StatusCode(HttpStatusCode.NoContent);
         }
     }

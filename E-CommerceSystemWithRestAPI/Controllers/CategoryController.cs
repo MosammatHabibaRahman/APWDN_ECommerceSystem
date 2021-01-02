@@ -12,29 +12,29 @@ namespace E_CommerceSystemWithRestAPI.Controllers
     [RoutePrefix("api/categories")]
     public class CategoryController : ApiController
     {
-        CategoryRepository cr = new CategoryRepository();
+        CategoryRepository catRepo = new CategoryRepository();
 
         [Route("")]
         public IHttpActionResult GetAll()
         {
-            return Ok(cr.GetAll());
+            return Ok(catRepo.GetAll());
         }
 
         [Route("{id}", Name = "GetCategoryById")]
         public IHttpActionResult Get(int id)
         {
-            var post = cr.Get(id);
+            var post = catRepo.Get(id);
             if (post == null)
             {
                 return StatusCode(HttpStatusCode.NoContent);
             }
-            return Ok(cr.Get(id));
+            return Ok(catRepo.Get(id));
         }
 
         [Route("")]
         public IHttpActionResult Post(Category category)
         {
-            cr.Insert(category);
+            catRepo.Insert(category);
             string uri = Url.Link("GetCategoryById", new { id = category.CategoryId });
             return Created(uri, category);
         }
@@ -43,14 +43,14 @@ namespace E_CommerceSystemWithRestAPI.Controllers
         public IHttpActionResult Put([FromUri] int id, [FromBody] Category category)
         {
             category.CategoryId = id;
-            cr.Update(category);
+            catRepo.Update(category);
             return Ok(category);
         }
 
         [Route("{id}")]
         public IHttpActionResult Delete(int id)
         {
-            cr.Delete(id);
+            catRepo.Delete(id);
             return StatusCode(HttpStatusCode.NoContent);
         }
     }
