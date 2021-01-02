@@ -23,8 +23,8 @@ namespace E_CommerceSystemWithRestAPI.Controllers
         [Route("{id}", Name = "GetShipperById")]
         public IHttpActionResult Get(int id)
         {
-            var post = shipperRepo.Get(id);
-            if (post == null)
+            var shipper = shipperRepo.Get(id);
+            if (shipper == null)
             {
                 return StatusCode(HttpStatusCode.NoContent);
             }

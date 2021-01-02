@@ -23,8 +23,8 @@ namespace E_CommerceSystemWithRestAPI.Controllers
         [Route("{id}", Name = "GetCategoryById")]
         public IHttpActionResult Get(int id)
         {
-            var post = catRepo.Get(id);
-            if (post == null)
+            var category = catRepo.Get(id);
+            if (category == null)
             {
                 return StatusCode(HttpStatusCode.NoContent);
             }
