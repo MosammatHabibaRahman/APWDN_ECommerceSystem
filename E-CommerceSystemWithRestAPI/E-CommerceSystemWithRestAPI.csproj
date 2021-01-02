@@ -98,8 +98,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\CategoryController.cs" />
-    <Compile Include="Controllers\ShipperController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -110,6 +109,10 @@
     <Compile Include="Migrations\202101021156188_xyz.cs" />
     <Compile Include="Migrations\202101021156188_xyz.designer.cs">
       <DependentUpon>202101021156188_xyz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101020714386_ProductUpdate.cs" />
+    <Compile Include="Migrations\202101020714386_ProductUpdate.designer.cs">
+      <DependentUpon>202101020714386_ProductUpdate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
@@ -153,6 +156,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202101021156188_xyz.resx">
       <DependentUpon>202101021156188_xyz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101020714386_ProductUpdate.resx">
+      <DependentUpon>202101020714386_ProductUpdate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

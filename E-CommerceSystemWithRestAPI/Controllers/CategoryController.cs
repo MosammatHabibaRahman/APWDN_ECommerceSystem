@@ -12,45 +12,63 @@ namespace E_CommerceSystemWithRestAPI.Controllers
     [RoutePrefix("api/categories")]
     public class CategoryController : ApiController
     {
-        CategoryRepository catRepo = new CategoryRepository();
+        CategoryRepository categoryRepository = new CategoryRepository();
+        ProductRepository productRepository = new ProductRepository();
+        [Route("")]
 
         [Route("")]
         public IHttpActionResult GetAll()
         {
-            return Ok(catRepo.GetAll());
+            return Ok(categoryRepository.GetAll());
         }
 
-        [Route("{id}", Name = "GetCategoryById")]
+        [Route("{id}")]
         public IHttpActionResult Get(int id)
         {
-            var post = catRepo.Get(id);
-            if (post == null)
+            Category category = categoryRepository.Get(id);
+            if (category == null)
             {
                 return StatusCode(HttpStatusCode.NoContent);
             }
-            return Ok(catRepo.Get(id));
+            else
+            {
+                return Ok(category);
+            }
         }
 
         [Route("")]
         public IHttpActionResult Post(Category category)
         {
-            catRepo.Insert(category);
-            string uri = Url.Link("GetCategoryById", new { id = category.CategoryId });
-            return Created(uri, category);
+            if (ModelState.IsValid)
+            {
+                categoryRepository.Insert(category);
+                return StatusCode(HttpStatusCode.Created);
+            }
+            else
+            {
+                return StatusCode(HttpStatusCode.BadRequest);
+            }
         }
 
         [Route("{id}")]
         public IHttpActionResult Put([FromUri] int id, [FromBody] Category category)
         {
             category.CategoryId = id;
-            catRepo.Update(category);
-            return Ok(category);
+            if (ModelState.IsValid)
+            {
+                categoryRepository.Update(category);
+                return Ok(category);
+            }
+            else
+            {
+                return BadRequest(ModelState);
+            }
         }
 
         [Route("{id}")]
         public IHttpActionResult Delete(int id)
         {
-            catRepo.Delete(id);
+            categoryRepository.Delete(id);
             return StatusCode(HttpStatusCode.NoContent);
         }
     }
